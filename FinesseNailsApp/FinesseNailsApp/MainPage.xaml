@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FinesseNailsApp"
+             x:Class="FinesseNailsApp.MainPage">
+    <Grid
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand">
+        
+        <Image x:Name ="Background" Source="nails.png" Aspect="AspectFill"/>
+    </Grid>
+    <!--
+    <StackLayout>
+        <Image Source="logo.png">
+            <Image.GestureRecognizers>  This Gesture Recognizer allows an image to be tapped like a button
+                <TapGestureRecognizer
+                Tapped="OnRootClicked"/>
+            </Image.GestureRecognizers>
+        </Image>
+        <Label Text="Hours" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand"/>
+        <Button Text="Make an Appointment" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand"
+           Clicked="OnAppClicked"/>
+        <Button Text="Prices" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" 
+           Clicked="OnPriceClicked"/>
+        <Button Text="More Information" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" 
+           Clicked="OnInfoClicked"/>
+    </StackLayout>
+-->
+</ContentPage>
