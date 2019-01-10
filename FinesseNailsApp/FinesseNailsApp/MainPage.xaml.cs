@@ -48,7 +48,7 @@ namespace FinesseNailsApp
 
        void OnContactClicked(object sender, System.EventArgs e)
         {
-           Navigation.PushAsync(new PricePage());//PricePage
+           Navigation.PushAsync(new ContactPage());//PricePage
         }
 
        void OnInfoClicked(object sender, System.EventArgs e)
@@ -56,9 +56,9 @@ namespace FinesseNailsApp
            Navigation.PushAsync(new InfoPage());//EmployeeInfoPage
         }
 
-        private void OnKeyInfoClicked(object sender, EventArgs e)
+        private void OnPriceClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new KeyInfoPage());//Price,Location,Hours Page
+            Navigation.PushAsync(new PricePage());//Price,Location,Hours Page
         }
     }
 }

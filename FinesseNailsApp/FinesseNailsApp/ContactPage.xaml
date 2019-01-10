@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinesseNailsApp.ContactPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Hours 9am - 7pm "/>
+            <Label Text="Location "/>
+            <Button Text="4203 Genesee Ave Ste A107/A108 San Diego, CA 92117" 
+                    Clicked="OnMapClick" 
+                    BackgroundColor="red"
+                    />
+            <Button Text="Rates"/>
+            <Button Text="Call us @ (858)268-4410" Clicked="OnCalledClicked"/>
+            <Label Text="Email : "/>
+            <Button Text="Visit us @ http://finessenailslashstudio.com/ " Clicked="OnWebsiteClicked"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

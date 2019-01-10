@@ -30,7 +30,7 @@
         <Label Text="" Grid.Row="1" Grid.Column="0" BackgroundColor="Transparent"/>
         <Label Text="" Grid.Row="1" Grid.Column="1" BackgroundColor="Transparent"/>
         <Button Text="Contact Us" Grid.Row="2" Grid.Column="0" BackgroundColor="Transparent" Clicked="OnContactClicked"/>
-        <Button Text="Prices,Hours,Location" Grid.Row="2" Grid.Column="1" BackgroundColor="Transparent" Clicked="OnKeyInfoClicked"/>
+        <Button Text="Prices,Hours,Location" Grid.Row="2" Grid.Column="1" BackgroundColor="Transparent" Clicked="OnPriceClicked"/>
         <Button Text="More Employee Info" Grid.Row="3" Grid.Column="0" BackgroundColor="Transparent" Clicked="OnInfoClicked"/>
         <Button Text="Make an Appointment Here" Grid.Row="3" Grid.Column="1" BackgroundColor="Transparent" Clicked="OnAppClicked"/>
 

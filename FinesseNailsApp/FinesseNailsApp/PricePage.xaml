@@ -12,7 +12,9 @@
                 Tapped="OnRootClicked"/>
                 </Image.GestureRecognizers>
             </Image>
-            <Label Text="This is the price page" />
-      </StackLayout>
+            <Label Text="Rates: " />
+            <Label Text="USD $90" />
+            <Label Text="USD $100 " />
+        </StackLayout>
   </ContentPage.Content>
 </ContentPage>
