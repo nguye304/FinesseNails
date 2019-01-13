@@ -10,9 +10,9 @@
                     Clicked="OnMapClick" 
                     BackgroundColor="red"
                     />
-            <Button Text="Rates"/>
+            <Button Text="Rates" Clicked="OnRatesClicked"/>
             <Button Text="Call us @ (858)268-4410" Clicked="OnCalledClicked"/>
-            <Label Text="Email : "/>
+            <Button Text="Email : something@yaoo.com " Clicked="onEmailClicked"/>
             <Button Text="Visit us @ http://finessenailslashstudio.com/ " Clicked="OnWebsiteClicked"/>
             
         </StackLayout>
