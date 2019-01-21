@@ -3,16 +3,88 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinesseNailsApp.InfoPage"
              Title="InfoPage">
-  <ContentPage.Content>
-      <StackLayout>
-            <Image Source="logo.png">
-                <Image.GestureRecognizers>
-                    <!--This Gesture Recognizer allows an image to be tapped like a button-->
-                    <TapGestureRecognizer
-                Tapped="OnRootClicked"/>
-                </Image.GestureRecognizers>
-            </Image>
-            <Label Text="This is the information page" />
-      </StackLayout>
-  </ContentPage.Content>
+
+        <ListView
+            x:Name="EmployeeListView"
+            HasUnevenRows="True"
+            IsPullToRefreshEnabled="true"
+            Refreshing="Handle_Refreshing">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <!--Hold down to do something-->
+                            <MenuItem
+                                Text="More"
+                                Clicked="Handle_MoreInfoClicked"
+                                CommandParameter="{Binding .}"/>
+                            <MenuItem
+                                Text="App"
+                                Clicked="Handle_MakeAppointClicked"
+                                CommandParameter="{Binding .}"/>
+                        </ViewCell.ContextActions>
+
+                        <ViewCell.View>
+                            <Grid>
+                                <!--- Column and Row Definitions for Grid of each selection -->
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition
+                                        Width="Auto"/>
+                                    <ColumnDefinition
+                                        Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition
+                                        Height="*"/>
+                                    <RowDefinition
+                                        Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <StackLayout
+                                    Grid.Column="0"
+                                    Grid.Row="0"
+                                    Orientation="Horizontal"
+                                    HorizontalOptions="Center">
+                                    <!-- The contents of each row in list view-->
+                                    <Label
+                                        Text = "{Binding Name}" Margin="2" TextColor="Red"/>
+                                    <Label 
+                                        Text="{Binding Age, StringFormat='Age: {0:##}'}" Margin="2" TextColor="Green"/>
+
+                                </StackLayout>
+                                <StackLayout
+                                    Grid.Column="0"
+                                    Grid.Row="1"
+                                    Orientation="Horizontal"
+                                    HorizontalOptions="Center">
+                                    <!-- The contents of each row in list view-->
+                                    <Label
+                                        Text=" Hello " Margin="2" TextColor="Blue"/>
+                                    <Label 
+                                        Text="Ana" Margin="2" TextColor="Black"/>
+
+                                </StackLayout>
+        
+                            </Grid>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
 </ContentPage>
+
+
+<!--
+<StackLayout>
+    <Image Source="logo.png">
+        <Image.GestureRecognizers>
+            This Gesture Recognizer allows an image to be tapped like a button-->
+          <!--  <TapGestureRecognizer
+                Tapped="OnRootClicked"/>
+        </Image.GestureRecognizers>
+    </Image>
+    <Label Text="This is the information page" />
+</StackLayout>
+    -->

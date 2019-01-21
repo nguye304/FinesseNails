@@ -16,7 +16,7 @@ namespace FinesseNailsApp
         {
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
-
+            /*
             var grid = new Grid();
 
             grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
@@ -26,14 +26,14 @@ namespace FinesseNailsApp
 
             var topLeft = new Label { Text = "Top Left" };
             var topRight = new Label { Text = "Top Right" };
-            var bottomLeft = new Label { Text = "Bottom ANA IS HOT Left" };
-            var bottomRight = new Label { Text = "Bottom DURR RIGHT FKR Right" };
+            var bottomLeft = new Label { Text = "Bottom Left" };
+            var bottomRight = new Label { Text = "Bottom D Right" };
 
             grid.Children.Add(topLeft, 0, 0);
             grid.Children.Add(topRight, 1, 0);
             grid.Children.Add(bottomLeft, 0, 1);
             grid.Children.Add(bottomRight, 1, 1);
-
+            */
         }
 
         async void OnRootClicked(object sender, System.EventArgs e)
