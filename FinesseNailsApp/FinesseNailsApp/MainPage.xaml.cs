@@ -58,7 +58,7 @@ namespace FinesseNailsApp
 
         private void OnPriceClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new PricePage());//Price,Location,Hours Page
+            Navigation.PushAsync(new KeyInfoPage());//Price,Location,Hours Page
         }
     }
 }

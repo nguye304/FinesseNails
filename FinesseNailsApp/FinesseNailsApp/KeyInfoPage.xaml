@@ -3,10 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinesseNailsApp.KeyInfoPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="This is the key info page"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                <!-- Picture of Store -->
+                <!-- Little Textbox of Hours-->
+                <Label Text="Hours:"/>
+
+                <ListView x:Name="HoursListView">
+                    <!-- DropDownMenu/ListView of Prices-->
+                 
+                </ListView>
+               
+                <!-- Prices -->
+                <Label Text="Prices"/>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
