@@ -25,7 +25,37 @@ namespace FinesseNailsApp
             InitializeComponent();
             PopulateHours();//provides strings for listview
             HighlightToday();//highlights the list view according to todays date
-         
+            PopulatePrice();
+        }
+
+        private void PopulatePrice()
+        {
+            var itemCollection = new ObservableCollection<Item>();
+            var item1 = new Item
+            {
+                Name = "Pedicure1",
+                Price = 10100,
+            };
+            var item2 = new Item
+            {
+                Name = "Pedicure2",
+                Price = 10020,
+            };
+            var item3 = new Item
+            {
+                Name = "Pedicure3",
+                Price = 41000,
+            };
+
+            itemCollection.Add(item1);
+            itemCollection.Add(item2);
+            itemCollection.Add(item3);
+
+            PriceListView.ItemsSource = itemCollection;
+
+
+
+
         }
 
         private void PopulateHours()
@@ -53,12 +83,13 @@ namespace FinesseNailsApp
 
         private void HighlightToday()
         {//will highlight the day according to date
+            /*
             HoursListView.SetSelector(Android.Resource.Color.Transparent;
-            HoursListView.CacheColorHint = Xamarin.Forms.Color.Transparent.ToAndroid();
+            HoursListView.CacheColorHint = Color.Transparent.ToAndroid();
             DateTime today = DateTime.Now;//gets todays date format "M/dd/yyyy hh:mm:ss tt"
             var Day = today.ToString("dddd");
             Console.WriteLine(Day);
-            
+            */
 
 
         }

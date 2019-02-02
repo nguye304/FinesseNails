@@ -16,6 +16,40 @@
                
                 <!-- Prices -->
                 <Label Text="Prices"/>
+                <ListView x:Name="PriceListView">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition
+                                                Width="Auto"/>
+                                            <ColumnDefinition
+                                                Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition
+                                                Height="*"/>
+                                            <RowDefinition
+                                                Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <StackLayout
+                                            Grid.Column="0"
+                                            Grid.Row="0"
+                                            Orientation="Horizontal"
+                                            HorizontalOptions="Center">
+                                            <Label Text="{Binding Name}" Margin="1" TextColor="Black"/>
+
+                                            <Label Text="{Binding Price}" Margin="1" TextColor="Blue"/>
+                                        </StackLayout>
+                                    </Grid>
+                                </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
