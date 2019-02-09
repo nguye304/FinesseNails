@@ -1,19 +1,16 @@
 ﻿//this page will access a mysql database about the employees
 //it will allow users to read about everyone
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using System.Net.Http;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using Newtonsoft.Json;
 
 
 namespace FinesseNailsApp
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class InfoPage : ContentPage
 	{
 		public InfoPage ()
@@ -23,8 +20,31 @@ namespace FinesseNailsApp
 		}
 
 
-        private void PopulateListView()
+        async private void PopulateListView()
         {
+            string finesseApi = "https://google.com";
+            var Uri = new Uri(finesseApi);
+            var client = new HttpClient();
+            EmpRootObject EmpData = new EmpRootObject();
+            HttpResponseMessage response = await client.GetAsync(Uri);
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonContent = await response.Content.ReadAsStringAsync();
+                if (jsonContent == "{emp\":null}")
+                {
+                    await DisplayAlert("Error","no employees found" ,"OK");
+                    return;
+
+                }
+                EmpData = JsonConvert.DeserializeObject<EmpRootObject>(jsonContent);
+            }
+            else
+            {
+                await DisplayAlert("Error", "emp json request failed", "OK");
+
+            }
+            EmployeeListView.ItemsSource = new ObservableCollection<Employee>(EmpData.Employees);
+            
             //Using this method for test before SQL database implementation
             var employeeCollection = new ObservableCollection<Employee>();
       

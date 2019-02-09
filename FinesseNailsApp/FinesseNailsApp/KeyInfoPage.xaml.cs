@@ -5,9 +5,11 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using Newtonsoft.json;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using FinesseNailsApp.Models;
+using System.Net.Http;
 
 namespace FinesseNailsApp
 {
@@ -28,8 +30,33 @@ namespace FinesseNailsApp
             PopulatePrice();
         }
 
-        private void PopulatePrice()
+        async void PopulatePrice()
         {
+            
+            string finesseApi = "https://google.com";
+            var Uri = new Uri(finesseApi);
+            var client = new HttpClient();
+            PriceRootObject priceData = new PriceRootObject();
+            HttpResponseMessage response = await client.GetAsync(Uri);
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonContent = await response.Content.ReadAsStringAsync();
+                if (jsonContent == "{prices\":null}")
+                {
+                    await DisplayAlert("Error","no prices found ","OK");
+                    return;
+              
+                }
+                priceData = JsonConvert.DeserializeObject<PriceRootObject>(jsonContent);
+            }
+            else
+            {
+                await DisplayAlert("Error", "json request failed", "OK");
+
+            }
+            PriceListView.ItemsSource = new ObservableCollection<Prices>(priceData.PricesList);
+            
+
             var itemCollection = new ObservableCollection<Item>();
             var item1 = new Item
             {
