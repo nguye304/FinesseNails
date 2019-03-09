@@ -4,15 +4,33 @@
              x:Class="FinesseNailsApp.AppointmentPage"
              Title="Make an Appointment">
   <ContentPage.Content>
-      <StackLayout>
-            <Image Source="logo.png">
-                <Image.GestureRecognizers>
-                    <!--This Gesture Recognizer allows an image to be tapped like a button-->
-                    <TapGestureRecognizer
-                Tapped="OnRootClicked"/>
-                </Image.GestureRecognizers>
-            </Image>
-            <Label Text="Make an Appointment here friend" />
-      </StackLayout>
-  </ContentPage.Content>
+        <ScrollView>
+          <StackLayout>
+                <Image Source="logo.png">
+                    <Image.GestureRecognizers>
+                        <!--This Gesture Recognizer allows an image to be tapped like a button-->
+                        <TapGestureRecognizer
+                    Tapped="OnRootClicked"/>
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Label Text="SELECT NAME OF EMPLOYEE"/>
+                <Label Text="Make an Appointment here friend" />
+                <Label Text="Select Date ( Days)"/>
+                <DatePicker MinimumDate="{Binding MinDate}"
+                            MaximumDate="{Binding MaxDate}"
+                            Date="{Binding SelectedDate}"
+                            DateSelected="OnDateSelected"
+                            HorizontalOptions="Center"/>
+                <Label Text=" Select Time (Hours)"/>
+                <TimePicker Time="{Binding SelectedTime}"
+                            HorizontalOptions="Center"
+                            />
+          
+                <Label Text="SELECT WHICH/TYPE OF WORK WANTED"/>
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
 </ContentPage>
